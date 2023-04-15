@@ -16,7 +16,13 @@ class Tree:
         if self.node != value and self.left is not None:
             return self.left.find(value)
         
-        return False
+        return value
+
+    def FullBinaryTree(self):
+        if self.numberOfLeaves() % 2 == 0:
+            return True
+        else:
+            return False
 
 
     def is_leaf(self):
@@ -36,6 +42,11 @@ class Tree:
         if self.right is not None and self.left is not None:
             return self.right.numberOfLeaves() + self.left.numberOfLeaves()
 
+        if self.right is not None:
+            return self.right.numberOfLeaves()
+
+        if self.left is not None:
+            return self.left.numberOfLeaves()        
 
 
     def output(self, indents):
