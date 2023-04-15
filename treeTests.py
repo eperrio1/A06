@@ -10,9 +10,6 @@ class treeTests(unittest.TestCase):
         self.assertEqual(False, proud_tree.is_leaf())
         self.assertEqual(True, proud_tree.right.is_leaf())
         self.assertEqual(True, proud_tree.left.is_leaf())
-
-
-
     
     def test_numberOfLeaves(self):
         proud_tree = Tree('Penny')
@@ -24,6 +21,16 @@ class treeTests(unittest.TestCase):
         self.assertEqual(1, annnie_tree.numberOfLeaves())
 
 
+    def test_FullBinaryTree(self):
+        proud_tree = Tree('Penny')
+        proud_tree.left = Tree('Trudy')
+        proud_tree.right = Tree('Oscar') 
+        self.assertEqual(True, proud_tree.FullBinaryTree())
+
+        saul_tree = Tree("Dajah")
+        saul_tree.left = Tree("Tracy")
+        saul_tree.left.left = Tree("Nancy")
+        self.assertEqual(False, saul_tree.FullBinaryTree())
     
     def test_find(self):
         proud_tree = Tree('Penny')
