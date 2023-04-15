@@ -24,13 +24,33 @@ class Tree:
         else:
             return False
 
-
     def is_leaf(self):
         if self is None:
             return True
         if self.left is None and self.right is None:
             return True
         return False
+
+    
+    def insert(self, node):
+        if self.node == node:
+            return self
+            
+        if self is None: 
+            return Tree(node)
+
+            
+        # if self.left is None:
+            # self.left = Tree(node)
+            # return self.left.insert(node)
+ 
+
+        if self.right is None:
+            self.right = Tree(node)
+            return self.right.insert(node)
+ 
+            
+        return self
 
     def numberOfLeaves(self):
         if self.is_leaf() == True:
