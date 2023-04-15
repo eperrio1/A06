@@ -6,6 +6,19 @@ class Tree:
         self.node = node
 
 
+    def find(self, value):
+        if self.node == value:
+            return self
+            
+        if self.node != value and self.right is not None:
+            return self.right.find(value)
+
+        if self.node != value and self.left is not None:
+            return self.left.find(value)
+        
+        return False
+
+
     def is_leaf(self):
         if self is None:
             return True
