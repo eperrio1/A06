@@ -11,6 +11,9 @@ class treeTests(unittest.TestCase):
         self.assertEqual(True, proud_tree.right.is_leaf())
         self.assertEqual(True, proud_tree.left.is_leaf())
 
+
+
+    
     def test_numberOfLeaves(self):
         proud_tree = Tree('Penny')
         proud_tree.left = Tree('Trudy')
@@ -19,6 +22,16 @@ class treeTests(unittest.TestCase):
         
         annnie_tree = Tree("Annie")
         self.assertEqual(1, annnie_tree.numberOfLeaves())
+
+
+    
+    def test_find(self):
+        proud_tree = Tree('Penny')
+        proud_tree.left = Tree('Trudy')
+        proud_tree.right = Tree('Oscar') 
+        
+        self.assertEqual(proud_tree, proud_tree.find("Penny"))
+        self.assertEqual("Bebe", proud_tree.find("Bebe"))      
     
 
     
